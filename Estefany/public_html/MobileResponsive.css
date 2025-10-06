@@ -1,0 +1,216 @@
+/* ========================================================================= */
+/* --- MEDIA QUERY: MÓVILES Y TABLETS PEQUEÑAS (Ancho Máximo 768px) --- */
+/* ========================================================================= */
+@media (max-width: 768px) {
+    
+    /* --- Estilos Generales y Layout --- */
+    /* La scrollbar con VW puede ser demasiado pequeña; la desactivamos o la mantenemos. */
+    ::-webkit-scrollbar{width: 0.5rem; height: 0.5rem;}
+    
+    .SectionSize {
+        /* Permitimos que la altura crezca al apilar elementos */
+        height: auto; 
+        min-height: 100vh;
+    }
+    .FlexGeneric, .aboutUs, .ContactMe {
+        /* Todos los contenedores flexibles que estaban en fila, ahora se apilan */
+        flex-direction: column;
+    }
+
+    /* --- Header Componentes --- */
+    .mainHeader-image {
+        /* La imagen ocupa la mayor parte del ancho */
+        width: 90%;
+        min-height: 40vh; /* Se reduce un poco la altura mínima */
+        margin: 2rem auto; /* Centramos y añadimos margen superior/inferior */
+    }
+    .mainHeader-text {
+        /* El texto ocupa la mayor parte del ancho */
+        width: 90%;
+        min-width: unset; /* Deshacer el min-width de PC */
+        margin: 1rem auto;
+        padding: 5%;
+    }
+    /* TIPOGRAFÍA: Cambiamos de VW (inconsistente en móvil) a PX/REM (fijo y legible) */
+    .mainHeader-titulo {
+        font-size: 28px; 
+        text-align: center;
+    }
+    .mainHeader-parrafo {
+        font-size: 16px;
+    }
+    .mainHeader-boton {
+        font-size: 16px;
+        padding: 15px 25px;
+        display: block;
+        width: 70%;
+        margin: 1rem auto;
+        text-align: center;
+    }
+
+    /* --- About Us Componentes --- */
+    .aboutUs-information, .aboutUs-imagenes {
+        /* Los dos bloques (información e imágenes) pasan a ocupar casi todo el ancho */
+        width: 90%;
+        height: auto;
+        margin: 1rem 0;
+    }
+    .aboutUs-imagenes {
+        /* Ajustamos la rejilla para que el espacio (gap) no use 'vw' */
+        gap: 10px;
+        /* Reducimos el grid a una configuración más simple si es necesario, pero mantenemos el diseño */
+    }
+    .aboutUs-texto, .aboutUs-texto-experiencia {
+        font-size: 16px;
+        text-indent: 0;
+        line-height: 1.5; /* Line-height basado en números es mejor que en vw */
+    }
+    .aboutUs-line {
+        height: 5px; /* Altura fija */
+    }
+    .aboutUs-titulo {
+        font-size: 36px;
+    }
+    .aboutUs-titulo-experiencia {
+        font-size: 24px;
+    }
+
+    /* --- Services Componentes --- */
+    .Services-title {
+        font-size: 36px;
+    }
+    .Services-parrafo {
+        font-size: 18px;
+        line-height: 1.6;
+        width: 90%; /* El párrafo ocupa más espacio */
+    }
+    .summary-text {
+        font-size: 20px;
+        padding: 15px;
+    }
+    .summary-icon {
+        width: 30px; /* Tamaño fijo para el icono */
+        height: 30px;
+    }
+    .Services-items-line {
+        height: 2px;
+    }
+    .Services-list {
+        font-size: 16px;
+        /* Reducimos las columnas de 5 a 2, que es más legible en móvil */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        margin: 1rem 0;
+        padding: 0 10px;
+    }
+    .Services-list li {
+        width: 100%;
+        margin-left: 1rem;
+        padding: 0.5rem 0;
+    }
+
+    /* --- Portafolio Componentes --- */
+    .Portafolio-title {
+        font-size: 36px;
+    }
+    .Portafolio-parrafo {
+        font-size: 18px;
+        width: 90%;
+    }
+    .Portafolio-Grid {
+        width: 95%;
+        height: auto;
+        /* Cambiamos el grid de 4 columnas a 2 columnas para móvil */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto; /* La altura se ajusta al contenido */
+        gap: 10px; /* Añadir un pequeño espacio entre imágenes */
+    }
+    .Portafolio-item-image {
+        border-radius: 10px; /* Bordes más pequeños y adecuados para móvil */
+        width: 100%;
+        height: 25vh; /* Damos una altura fija para mantener la proporción visual */
+    }
+
+    /* --- Testimonios Componentes --- */
+    .Testimonials-title {
+        font-size: 36px;
+    }
+    .Testimonials-paragraph {
+        font-size: 18px;
+    }
+    .Testimonials-Grid {
+        /* Cambiamos de 3 columnas a 1 columna (apilado) */
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .Testimonials-item {
+        margin: 2vh 0;
+    }
+    .Testimonials-item-namePerson {
+        font-size: 24px;
+    }
+    .Testimonials-item-paragraph {
+        font-size: 16px;
+        text-align: center;
+    }
+    .Testimonials-item-image {
+        height: 120px;
+        width: 120px;
+    }
+    
+    /* --- Contácto Componentes --- */
+    .ContactMe {
+        flex-direction: column; /* Apilamos las secciones */
+        padding: 2vh;
+    }
+    .ContactMe-Contact, .ContactMe-Ubicacion {
+        /* Ambas secciones ocupan todo el ancho */
+        width: 100%;
+        height: auto;
+        margin-bottom: 3vh;
+    }
+    .ContactMe-Ubicacion {
+        align-items: center; /* Centramos los títulos y mapa */
+    }
+    .ContactMe-form {
+        width: 90%;
+        align-items: center; /* Centrar elementos del formulario */
+    }
+    
+    /* TIPOGRAFÍA: Usamos PX/REM para títulos y párrafos */
+    .ContactMe-title, #ContactMe-title-Ubication {
+        font-size: 28px; /* Reducción de 4vw */
+        text-align: center;
+        width: 100%;
+    }
+    .ContactMe-paragraph {
+        font-size: 16px; /* Reducción de 1.5vw */
+        text-align: center;
+        width: 100%;
+    }
+    
+    /* Campos de Formulario */
+    #ContactMe-input-NombreCompleto, #ContactMe-input-CorreoElectronico, #ContactMe-ComboServicio, #ContactMe-textArea {
+        height: 40px; /* Altura fija más manejable que 3vw */
+        font-size: 16px;
+    }
+    .ContactMe-title-input-name, .ContactMe-title-input-combo, .ContactMe-title-input-email {
+        font-size: 18px;
+        width: 100%; /* Aseguramos que la etiqueta ocupe el ancho */
+    }
+    #ContactMe-textArea {
+        height: 15vh; /* Altura cómoda para el mensaje */
+    }
+    
+    #ContactMe-sendButton {
+        width: 60%; /* El botón ocupa la mayoría del ancho, es fácil de presionar */
+        height: 20%;
+        font-size: 16px;
+        margin: 3vh auto;
+    }
+    
+    /* Estilo del iFrame/Mapa */
+    #ContactMe-map {
+        min-height: 40vh; /* Aseguramos que el mapa sea visible */
+    }
+}

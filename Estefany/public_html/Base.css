@@ -1,0 +1,148 @@
+/**
+ * =============================================================================
+ * 0. SETUP INICIAL
+ * =============================================================================
+ * Configuración de la caja (box-sizing) global para una gestión de layouts predecible.
+ */
+*,
+*::before,
+*::after {
+    /* Establece el modelo de caja global para incluir padding y border en el width/height. */
+    box-sizing: border-box;
+}
+
+/**
+ * =============================================================================
+ * 1. REINICIO DE ELEMENTOS HTML (Normalize/Reset)
+ * =============================================================================
+ * Elimina márgenes y paddings por defecto de los navegadores para iniciar con un lienzo limpio.
+ */
+html {
+    /* Define un tamaño de fuente base para facilitar el uso de unidades 'rem'. */
+    font-size: 100%; /* 1rem = 16px */
+    /* Desplazamiento de scroll suave para anclajes (opcional, mejora UX). */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Elimina el margen por defecto del body. */
+    margin: 0;
+    /* Establece el stack de fuente base para el cuerpo del texto. */
+    font-family: "Montserrat", "sans-serif";
+    /* Establece un color de fondo base y de texto por defecto. */
+    background-color: #ffffff; /* Blanco de fondo por defecto */
+    color: #333333; /* Color de texto oscuro para alta legibilidad */
+    /* Optimiza la representación de fuentes. */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Evita el ajuste de texto en la mayoría de los dispositivos móviles. */
+    text-size-adjust: 100%;
+}
+
+/**
+ * Elimina el margen superior de los elementos de flujo de bloque principales.
+ * Esto facilita el control del espaciado con margen-bottom.
+ */
+body > * {
+    margin-top: 0;
+}
+
+/* Reinicio de Tipografía: Remueve márgenes y paddings. */
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote, figure, hr {
+    margin: 0;
+    padding: 0;
+}
+
+/* Establece el stack de fuente para encabezados (Display). */
+h1, h2, h3 {
+    font-family: "Cormorant Garamond", "serif";
+    line-height: 1.2;
+}
+
+/* Enlaces: Elimina la decoración por defecto. */
+a {
+    color: inherit; /* Hereda el color del texto del padre. */
+    text-decoration: none; /* Remueve el subrayado por defecto. */
+}
+
+/* Listas: Remueve el estilo de lista (viñetas/números). */
+ul, ol {
+    list-style: none;
+}
+
+/* Imágenes, Videos y Objetos Embebidos: Hacen que sean flexibles y responsivas. */
+img,
+svg,
+video,
+canvas,
+iframe,
+embed,
+object {
+    display: block; /* Elimina el espacio extra debajo de elementos 'inline'. */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Inputs y Botones: Normalización de apariencia y eliminación de bordes por defecto. */
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* Hereda la tipografía base. */
+    font-size: 100%; /* Normaliza el tamaño de la fuente. */
+    line-height: 1.15; /* Normaliza la altura de línea. */
+    margin: 0; /* Elimina márgenes por defecto en Firefox y Edge. */
+}
+
+/* Botones: Estilos base para una apariencia consistente. */
+button {
+    text-transform: none; /* Previene la capitalización forzada. */
+    cursor: pointer;
+}
+
+/* Formulario: Reinicio específico para textarea (redimensionamiento). */
+textarea {
+    resize: vertical; /* Permite solo el redimensionamiento vertical. */
+}
+
+/* Elementos Semánticos/Estructurales: Asegura la correcta visualización. */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block; /* Asegura que los elementos HTML5 se muestren como bloques. */
+}
+
+/* Elementos Específicos del HTML: */
+/* hr: Remueve el borde por defecto. */
+hr {
+    border: none;
+    border-top: 1px solid #eeeeee; /* Borde sutil para líneas divisorias. */
+    margin: 1em 0;
+}
+
+/* details/summary: Reinicio para mejorar la accesibilidad y el estilo. */
+summary {
+    display: list-item; /* Asegura que se muestre el marcador de lista/triángulo. */
+    cursor: pointer;
+}
+
+/**
+ * =============================================================================
+ * 2. VARIABLES CSS (Opcional, pero recomendado para un CSS moderno)
+ * =============================================================================
+ * Define variables de tipografía para fácil acceso y mantenimiento futuro.
+ */
+:root {
+    /* Tipografía */
+    --font-display: "Cormorant Garamond", "serif";
+    --font-body: "Montserrat", "sans-serif";
+
+    /* Tamaños de Fuente Base (ajustar en el módulo de 'Layout' o 'Theme') */
+    --text-base: 1rem; /* 16px */
+    --text-sm: 0.875rem; /* 14px */
+    --text-lg: 1.125rem; /* 18px */
+
+    /* Colores primarios (Ejemplo - ajustar en el módulo de 'Theme') */
+    --color-primary: #8a0022;
+    --color-secondary: #f0c3a6;
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+}
